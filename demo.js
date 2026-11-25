@@ -21,7 +21,7 @@ description: ${frontmatter.description}
 `;
 
 export const SAMPLE = Object.freeze({
-  "README.md": "# Sample counter\n\nInstall with npm ci. Run npm test to check it.\n",
+  "README.md": "# Sample counter\n\nInstall with npm install. Run npm test to check it.\n",
   "package.json": '{ "scripts": { "test": "node --test" } }',
   "counter.js": "export const increment = (n) => n + 1;",
 });
@@ -127,6 +127,6 @@ export async function runExercise() {
     `+- Install dependencies with \`${setup}\`.`,
     "+- Run `npm test` before handing off a change.",
     `+- The test script runs \`${test}\`.`,
-  ].join("\n");
+  ].join("\n") + "\n";
   return { trace, patch, skill: contents[0].text, files };
 }

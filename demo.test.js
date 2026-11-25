@@ -10,8 +10,9 @@ test("discovers, verifies, and uses the skill to draft a patch", async () => {
   ]);
   assert.match(skill, /inspect_sample_repository/);
   assert.match(patch, /\+\+\+ b\/AGENTS.md/);
-  assert.match(patch, /npm ci/);
+  assert.match(patch, /npm install/);
   assert.match(patch, /node --test/);
+  assert.ok(patch.endsWith("\n"));
   assert.equal(files["AGENTS.md"], undefined);
 });
 
